@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creative Prompt Generator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Creative Prompt Generator</h1>
+    <button id="backButton" class="back-btn">← Back to Selection</button>
+
+    <!-- Prompt Type Selector -->
+    <div class="prompt-selector" id="promptSelector">
+      <h2>Choose Your Prompt Type</h2>
+      <div class="prompt-grid">
+        <div class="prompt-card" data-type="writing">
+          <h3>Story Writing</h3>
+          <p>Generate creative writing prompts for your next story</p>
+        </div>
+        <div class="prompt-card" data-type="art">
+          <h3>Art Creation</h3>
+          <p>Get inspired with unique art prompt combinations</p>
+        </div>
+        <div class="prompt-card" data-type="coding">
+          <h3>Coding Projects</h3>
+          <p>Discover new programming challenges and projects</p>
+        </div>
+        <div class="prompt-card" data-type="music">
+          <h3>Music Composition</h3>
+          <p>Find inspiration for your next musical piece</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Creative Story Writing Prompt Section -->
+    <div class="section" id="writingSection">
+      <h2>Creative Story Writing Prompt Generator</h2>
+      <form id="writingForm">
+        <label for="character">Character:</label>
+        <input type="text" id="character" placeholder="Enter a character...">
+
+        <label for="setting">Setting:</label>
+        <input type="text" id="setting" placeholder="Enter a setting...">
+
+        <label for="conflict">Conflict:</label>
+        <input type="text" id="conflict" placeholder="Enter a conflict...">
+
+        <label for="mode">Mode:</label>
+        <select id="mode">
+          <option value="">Select a mode...</option>
+          <option value="dramatic">Dramatic</option>
+          <option value="sad">Sad</option>
+          <option value="romance">Romance</option>
+          <option value="adventure">Adventure</option>
+          <option value="mystery">Mystery</option>
+        </select>
+
+        <label for="details">Additional Details:</label>
+        <textarea id="details" placeholder="Enter additional details..."></textarea>
+
+        <button type="submit">Generate Writing Prompt</button>
+      </form>
+      <div class="output" id="writingOutput"></div>
+      <div class="word-count" id="writingWordCount"></div>
+      <button class="copy-btn" onclick="copyText('writingOutput')">Copy Prompt</button>
+    </div>
+
+    <!-- Art Prompt Section -->
+    <div class="section" id="artSection">
+      <h2>Art Prompt Generator</h2>
+      <form id="artForm">
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" placeholder="Enter a subject...">
+
+        <label for="style">Art Style:</label>
+        <input type="text" id="style" placeholder="Enter an art style...">
+
+        <label for="mood">Mood/Atmosphere:</label>
+        <input type="text" id="mood" placeholder="Enter a mood...">
+
+        <label for="details">Additional Details:</label>
+        <textarea id="details" placeholder="Enter additional details..."></textarea>
+
+        <button type="submit">Generate Art Prompt</button>
+      </form>
+      <div class="output" id="artOutput"></div>
+      <div class="word-count" id="artWordCount"></div>
+      <button class="copy-btn" onclick="copyText('artOutput')">Copy Prompt</button>
+    </div>
+
+    <!-- Coding Prompt Section -->
+    <div class="section" id="codingSection">
+      <h2>Coding Project Prompt Generator</h2>
+      <form id="codingForm">
+        <label for="language">Programming Language:</label>
+        <input type="text" id="language" placeholder="Enter programming language...">
+
+        <label for="difficulty">Difficulty Level:</label>
+        <select id="difficulty">
+          <option value="">Select difficulty...</option>
+          <option value="beginner">Beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="advanced">Advanced</option>
+        </select>
+
+        <label for="projectType">Project Type:</label>
+        <select id="projectType">
+          <option value="">Select project type...</option>
+          <option value="web">Web Development</option>
+          <option value="game">Game Development</option>
+          <option value="automation">Automation</option>
+          <option value="algorithm">Algorithm Challenge</option>
+          <option value="api">API Integration</option>
+        </select>
+
+        <label for="requirements">Specific Requirements:</label>
+        <textarea id="requirements" placeholder="Enter specific requirements or features..."></textarea>
+
+        <button type="submit">Generate Coding Prompt</button>
+      </form>
+      <div class="output" id="codingOutput"></div>
+      <div class="word-count" id="codingWordCount"></div>
+      <button class="copy-btn" onclick="copyText('codingOutput')">Copy Prompt</button>
+    </div>
+
+    <!-- Music Prompt Section -->
+    <div class="section" id="musicSection">
+      <h2>Music Composition Prompt Generator</h2>
+      <form id="musicForm">
+        <label for="genre">Genre:</label>
+        <input type="text" id="genre" placeholder="Enter music genre...">
+
+        <label for="instruments">Key Instruments:</label>
+        <input type="text" id="instruments" placeholder="Enter instruments...">
+
+        <label for="tempo">Tempo/Feel:</label>
+        <select id="tempo">
+          <option value="">Select tempo...</option>
+          <option value="slow">Slow/Ballad</option>
+          <option value="medium">Medium/Groove</option>
+          <option value="fast">Fast/Upbeat</option>
+        </select>
+
+        <label for="inspiration">Inspiration/Theme:</label>
+        <textarea id="inspiration" placeholder="Enter inspiration or theme..."></textarea>
+
+        <button type="submit">Generate Music Prompt</button>
+      </form>
+      <div class="output" id="musicOutput"></div>
+      <div class="word-count" id="musicWordCount"></div>
+      <button class="copy-btn" onclick="copyText('musicOutput')">Copy Prompt</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+/* Body Styling */
+body {
+    background: radial-gradient(circle at 50% 50%, rgba(30, 30, 47, 0.6), rgba(13, 13, 27, 0.8), rgba(0, 0, 0, 0.9)),
+                url('/8301211.png') no-repeat center center fixed;
+    color: #e1e8ff;
+    font-size: 16px;
+    padding: 20px;
+    background-size: cover;
+    background-blend-mode: overlay;
+    min-height: 100vh;
+}
+
+/* Container Styling */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: rgba(15, 15, 40, 0.85);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Prompt Selector Styling */
+.prompt-selector {
+    text-align: center;
+    padding: 20px;
+}
+
+.prompt-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.prompt-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.prompt-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #f39cff;
+}
+
+.prompt-card h3 {
+    color: #f39cff;
+    margin-bottom: 10px;
+}
+
+.prompt-card p {
+    color: #e1e8ff;
+    font-size: 0.9rem;
+}
+
+.back-btn {
+    background: transparent;
+    border: 2px solid #f39cff;
+    color: #f39cff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: none;
+}
+
+.back-btn:hover {
+    background: #f39cff;
+    color: #1a1a2e;
+}
+
+/* Heading Styling */
+h1 {
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    text-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
+}
+
+/* Section Styling */
+.section {
+    display: none;
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    background: rgba(20, 20, 60, 0.95);
+    transition: box-shadow 0.3s ease;
+}
+
+.section:hover {
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+.section h2 {
+    margin-bottom: 15px;
+    color: #e0e0ff;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
+}
+
+/* Form and Input Styling */
+form {
+    display: grid;
+    gap: 15px;
+}
+
+label {
+    font-size: 0.9rem;
+    color: #aaaaff;
+    font-weight: 600;
+}
+
+input[type="text"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(243, 156, 255, 0.2);
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #f39cff;
+    box-shadow: 0 0 10px rgba(243, 156, 255, 0.5);
+}
+
+textarea {
+    height: 120px;
+    resize: none;
+}
+
+/* Button Styling */
+button {
+    background: linear-gradient(90deg, #6c63ff, #f39cff);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #f39cff, #6c63ff);
+    transform: translateY(-2px);
+}
+
+.copy-btn {
+    background: #ff5f6d;
+    margin-top: 15px;
+}
+
+.copy-btn:hover {
+    background: #ff7b81;
+}
+
+/* Output Styling */
+.output {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    white-space: pre-wrap;
+    color: #e0e0ff;
+    font-size: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+    text-shadow: 0 1px 4px rgba(255, 255, 255, 0.3);
+}
+
+.output::before {
+    content: '✨ ';
+    font-size: 1.2rem;
+    color: #f39cff;
+}
+
+/* Word Count Styling */
+.word-count {
+    font-size: 0.9rem;
+    margin-top: 10px;
+    color: #aaaaff;
+}
+
+.word-count.warning {
+    color: #ff867c;
+}
+
+.word-count.success {
+    color: #6cdd6c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .prompt-grid {
+        grid-template-columns: 1fr;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
